@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcknksfyn7qei"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_7rrf7"]
+[ext_resource type="Texture2D" uid="uid://bjd6ko3hf8x6s" path="res://icon.svg" id="1_r5ced"]
+[ext_resource type="PackedScene" uid="uid://oeixh53x1jme" path="res://scenes/hurt_box.tscn" id="3_gn0qr"]
+[ext_resource type="PackedScene" uid="uid://f53xm67wgdtp" path="res://scenes/health_box.tscn" id="4_de4kw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2ik4"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_7rrf7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w2ik4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r5ced")
+
+[node name="HurtBox" parent="." instance=ExtResource("3_gn0qr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_w2ik4")
+
+[node name="HealthBox" parent="." instance=ExtResource("4_de4kw")]

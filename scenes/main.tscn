@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfrya2rgdnf2k"]
+
+[ext_resource type="PackedScene" uid="uid://dcknksfyn7qei" path="res://scenes/enemy.tscn" id="1_rxy0o"]
+[ext_resource type="PackedScene" uid="uid://bxlv8l0qlcacr" path="res://scenes/character.tscn" id="2_a1m7c"]
+[ext_resource type="PackedScene" uid="uid://dqkmaxqwy4str" path="res://scenes/fireball.tscn" id="3_x6xtp"]
+
+[node name="MAIN" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_rxy0o")]
+position = Vector2(332, 273)
+
+[node name="Player" parent="." instance=ExtResource("2_a1m7c")]
+position = Vector2(549, 312)
+
+[node name="Fireball" parent="." instance=ExtResource("3_x6xtp")]
+position = Vector2(845, 231)
